@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.com.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.com.org/">
+
+<xs:element name="ByteParaImagem" type="tns:ByteParaImagem"/>
+
+<xs:element name="ByteParaImagemResponse" type="tns:ByteParaImagemResponse"/>
+
+<xs:element name="ImagemParaByte" type="tns:ImagemParaByte"/>
+
+<xs:element name="ImagemParaByteResponse" type="tns:ImagemParaByteResponse"/>
+
+<xs:element name="TratamentoImg" type="tns:TratamentoImg"/>
+
+<xs:element name="TratamentoImgResponse" type="tns:TratamentoImgResponse"/>
+
+<xs:complexType name="ImagemParaByte">
+<xs:sequence>
+<xs:element name="arg0" type="tns:bufferedImage" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bufferedImage">
+<xs:sequence>
+<xs:element name="data" type="tns:raster" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="raster">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ImagemParaByteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ByteParaImagem">
+<xs:sequence>
+<xs:element name="arg0" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ByteParaImagemResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bufferedImage" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TratamentoImg">
+<xs:sequence>
+<xs:element name="imagem" type="xs:string" minOccurs="0"/>
+<xs:element name="ruido" type="xs:string" minOccurs="0"/>
+<xs:element name="filtro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TratamentoImgResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
